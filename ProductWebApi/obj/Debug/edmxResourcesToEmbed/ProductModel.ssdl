@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="productsModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Activity">
+    <Key>
+      <PropertyRef Name="ActivityId" />
+    </Key>
+    <Property Name="ActivityId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ActivityName" Type="varchar" MaxLength="50" />
+    <Property Name="ActivityPrice" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="ActivityCategory" Type="varchar" MaxLength="50" />
+    <Property Name="IsSaved" Type="varchar" MaxLength="50" />
+    <Property Name="IsBooked" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Air">
+    <Key>
+      <PropertyRef Name="AirId" />
+    </Key>
+    <Property Name="AirId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AirName" Type="varchar" MaxLength="50" />
+    <Property Name="Source" Type="varchar" MaxLength="50" />
+    <Property Name="Destination" Type="varchar" MaxLength="50" />
+    <Property Name="Class" Type="varchar" MaxLength="50" />
+    <Property Name="AirPrice" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="IsSaved" Type="varchar" MaxLength="50" />
+    <Property Name="IsBooked" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Car">
+    <Key>
+      <PropertyRef Name="CarId" />
+    </Key>
+    <Property Name="CarId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CarName" Type="varchar" MaxLength="50" />
+    <Property Name="CarModel" Type="varchar" MaxLength="50" />
+    <Property Name="CarBrand" Type="varchar" MaxLength="50" />
+    <Property Name="CarColor" Type="varchar" MaxLength="50" />
+    <Property Name="CarPrice" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="IsSaved" Type="varchar" MaxLength="50" />
+    <Property Name="IsBooked" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Hotel">
+    <Key>
+      <PropertyRef Name="HotelId" />
+    </Key>
+    <Property Name="HotelId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="HotelName" Type="varchar" MaxLength="50" />
+    <Property Name="City" Type="varchar" MaxLength="50" />
+    <Property Name="AvailableRooms" Type="varchar" MaxLength="50" />
+    <Property Name="Price" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="IsSaved" Type="varchar" MaxLength="50" />
+    <Property Name="IsBooked" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityContainer Name="productsModelStoreContainer">
+    <EntitySet Name="Activity" EntityType="Self.Activity" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Air" EntityType="Self.Air" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Car" EntityType="Self.Car" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Hotel" EntityType="Self.Hotel" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

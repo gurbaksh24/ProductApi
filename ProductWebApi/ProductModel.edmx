@@ -1,0 +1,205 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="productsModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Activity">
+          <Key>
+            <PropertyRef Name="ActivityId" />
+          </Key>
+          <Property Name="ActivityId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ActivityName" Type="varchar" MaxLength="50" />
+          <Property Name="ActivityPrice" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="ActivityCategory" Type="varchar" MaxLength="50" />
+          <Property Name="IsSaved" Type="varchar" MaxLength="50" />
+          <Property Name="IsBooked" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Air">
+          <Key>
+            <PropertyRef Name="AirId" />
+          </Key>
+          <Property Name="AirId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AirName" Type="varchar" MaxLength="50" />
+          <Property Name="Source" Type="varchar" MaxLength="50" />
+          <Property Name="Destination" Type="varchar" MaxLength="50" />
+          <Property Name="Class" Type="varchar" MaxLength="50" />
+          <Property Name="AirPrice" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="IsSaved" Type="varchar" MaxLength="50" />
+          <Property Name="IsBooked" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Car">
+          <Key>
+            <PropertyRef Name="CarId" />
+          </Key>
+          <Property Name="CarId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CarName" Type="varchar" MaxLength="50" />
+          <Property Name="CarModel" Type="varchar" MaxLength="50" />
+          <Property Name="CarBrand" Type="varchar" MaxLength="50" />
+          <Property Name="CarColor" Type="varchar" MaxLength="50" />
+          <Property Name="CarPrice" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="IsSaved" Type="varchar" MaxLength="50" />
+          <Property Name="IsBooked" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Hotel">
+          <Key>
+            <PropertyRef Name="HotelId" />
+          </Key>
+          <Property Name="HotelId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="HotelName" Type="varchar" MaxLength="50" />
+          <Property Name="City" Type="varchar" MaxLength="50" />
+          <Property Name="AvailableRooms" Type="varchar" MaxLength="50" />
+          <Property Name="Price" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="IsSaved" Type="varchar" MaxLength="50" />
+          <Property Name="IsBooked" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityContainer Name="productsModelStoreContainer">
+          <EntitySet Name="Activity" EntityType="Self.Activity" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Air" EntityType="Self.Air" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Car" EntityType="Self.Car" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Hotel" EntityType="Self.Hotel" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="productsModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Activity">
+          <Key>
+            <PropertyRef Name="ActivityId" />
+          </Key>
+          <Property Name="ActivityId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ActivityName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ActivityPrice" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="ActivityCategory" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IsSaved" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IsBooked" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Air">
+          <Key>
+            <PropertyRef Name="AirId" />
+          </Key>
+          <Property Name="AirId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AirName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Source" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Destination" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Class" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="AirPrice" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="IsSaved" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IsBooked" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Car">
+          <Key>
+            <PropertyRef Name="CarId" />
+          </Key>
+          <Property Name="CarId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CarName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CarModel" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CarBrand" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CarColor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CarPrice" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="IsSaved" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IsBooked" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Hotel">
+          <Key>
+            <PropertyRef Name="HotelId" />
+          </Key>
+          <Property Name="HotelId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="HotelName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="AvailableRooms" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Price" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="IsSaved" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IsBooked" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="productsEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Activities" EntityType="Self.Activity" />
+          <EntitySet Name="Airs" EntityType="Self.Air" />
+          <EntitySet Name="Cars" EntityType="Self.Car" />
+          <EntitySet Name="Hotels" EntityType="Self.Hotel" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="productsModelStoreContainer" CdmEntityContainer="productsEntities">
+          <EntitySetMapping Name="Activities">
+            <EntityTypeMapping TypeName="productsModel.Activity">
+              <MappingFragment StoreEntitySet="Activity">
+                <ScalarProperty Name="ActivityId" ColumnName="ActivityId" />
+                <ScalarProperty Name="ActivityName" ColumnName="ActivityName" />
+                <ScalarProperty Name="ActivityPrice" ColumnName="ActivityPrice" />
+                <ScalarProperty Name="ActivityCategory" ColumnName="ActivityCategory" />
+                <ScalarProperty Name="IsSaved" ColumnName="IsSaved" />
+                <ScalarProperty Name="IsBooked" ColumnName="IsBooked" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Airs">
+            <EntityTypeMapping TypeName="productsModel.Air">
+              <MappingFragment StoreEntitySet="Air">
+                <ScalarProperty Name="AirId" ColumnName="AirId" />
+                <ScalarProperty Name="AirName" ColumnName="AirName" />
+                <ScalarProperty Name="Source" ColumnName="Source" />
+                <ScalarProperty Name="Destination" ColumnName="Destination" />
+                <ScalarProperty Name="Class" ColumnName="Class" />
+                <ScalarProperty Name="AirPrice" ColumnName="AirPrice" />
+                <ScalarProperty Name="IsSaved" ColumnName="IsSaved" />
+                <ScalarProperty Name="IsBooked" ColumnName="IsBooked" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Cars">
+            <EntityTypeMapping TypeName="productsModel.Car">
+              <MappingFragment StoreEntitySet="Car">
+                <ScalarProperty Name="CarId" ColumnName="CarId" />
+                <ScalarProperty Name="CarName" ColumnName="CarName" />
+                <ScalarProperty Name="CarModel" ColumnName="CarModel" />
+                <ScalarProperty Name="CarBrand" ColumnName="CarBrand" />
+                <ScalarProperty Name="CarColor" ColumnName="CarColor" />
+                <ScalarProperty Name="CarPrice" ColumnName="CarPrice" />
+                <ScalarProperty Name="IsSaved" ColumnName="IsSaved" />
+                <ScalarProperty Name="IsBooked" ColumnName="IsBooked" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Hotels">
+            <EntityTypeMapping TypeName="productsModel.Hotel">
+              <MappingFragment StoreEntitySet="Hotel">
+                <ScalarProperty Name="HotelId" ColumnName="HotelId" />
+                <ScalarProperty Name="HotelName" ColumnName="HotelName" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="AvailableRooms" ColumnName="AvailableRooms" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="IsSaved" ColumnName="IsSaved" />
+                <ScalarProperty Name="IsBooked" ColumnName="IsBooked" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
